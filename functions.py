@@ -39,7 +39,6 @@ def get_keys_with_value(dct, value):
 
 def merge_sorted_lists(lst1, lst2):
     final = lst1.append(lst2)
-    int(final.sort())
     return final
     """
     Merges two sorted lists into one sorted list.
@@ -63,15 +62,21 @@ def find_second_largest(numbers):
     pass  # Implement this
 
 def is_anagram(str1, str2):
+    ana = []
     if len(str1) != len(str2):
         return False
-    count= len(str1)
     for i in str1:
         if i in str2:
-            str1.remove(i)
-            count -=1
-    if count > 0:
-        return False
+            ana.append(i)
+        if len(ana) == len(str2):
+            return True
+    # count= len(str1)
+    # for i in str1:
+    #     if i in str2:
+    #         str1.remove(i)
+    #         count -=1
+    # if count > 0:
+    #     return False
     else:
         return True
 
@@ -123,4 +128,4 @@ def find_common_elements(lst1, lst2):
 
 
 
-print(find_second_largest([1, 2, 3, 4]))
+print(merge_sorted_lists([1, 3, 5], [2, 4, 6]))
