@@ -1,6 +1,8 @@
 # TODO: Implement the following functions based on the descriptions.
 
 def reverse_list(lst):
+    lst[::-1]
+    return lst
     """
     Reverses the given list.
     :param lst: List of integers.
@@ -9,6 +11,12 @@ def reverse_list(lst):
     pass  # Implement this
 
 def count_occurrences(lst, element):
+    count = 0
+    for i in lst:
+        if element == lst[i]:
+            count += 1
+    return count
+
     """
     Counts how many times the given element appears in the list.
     :param lst: List of elements.
@@ -18,6 +26,9 @@ def count_occurrences(lst, element):
     pass  # Implement this
 
 def get_keys_with_value(dct, value):
+    for value in {dct,value}:
+        if value in {dct,value}:
+            return dct
     """
     Returns a list of keys that have the given value in the dictionary.
     :param dct: Dictionary to search.
@@ -27,6 +38,9 @@ def get_keys_with_value(dct, value):
     pass  # Implement this
 
 def merge_sorted_lists(lst1, lst2):
+    final = lst1.append(lst2)
+    int(final.sort())
+    return final
     """
     Merges two sorted lists into one sorted list.
     :param lst1: First sorted list.
@@ -36,6 +50,11 @@ def merge_sorted_lists(lst1, lst2):
     pass  # Implement this
 
 def find_second_largest(numbers):
+    lst = []
+    largest = max(numbers)
+    lst.append(largest)
+    # return max(numbers)
+    print(numbers)
     """
     Finds the second largest number in a list.
     :param numbers: List of integers.
@@ -44,6 +63,18 @@ def find_second_largest(numbers):
     pass  # Implement this
 
 def is_anagram(str1, str2):
+    if len(str1) != len(str2):
+        return False
+    count= len(str1)
+    for i in str1:
+        if i in str2:
+            str1.remove(i)
+            count -=1
+    if count > 0:
+        return False
+    else:
+        return True
+
     """
     Checks if two strings are anagrams.
     
@@ -76,6 +107,12 @@ def remove_duplicates(lst):
     pass  # Implement this
 
 def find_common_elements(lst1, lst2):
+    common = []
+    for i in lst1:
+        if i in lst2:
+            common.append(i)
+
+    return common
     """
     Finds common elements between two lists.
     :param lst1: First list.
@@ -83,3 +120,7 @@ def find_common_elements(lst1, lst2):
     :return: List of common elements.
     """
     pass  # Implement this
+
+
+
+print(find_second_largest([1, 2, 3, 4]))
